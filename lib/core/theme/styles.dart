@@ -803,6 +803,12 @@ class TextStyles {
       fontWeight: FontWeightHelper.semiBold,
     );
   }
+  static TextStyle font20w600Inter(context) {
+    return GoogleFonts.inter(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.semiBold,
+    );
+  }
 
   static TextStyle font12TaupeGrayw500Inter(context) {
     return GoogleFonts.inter(

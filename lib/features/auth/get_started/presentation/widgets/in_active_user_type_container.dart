@@ -18,34 +18,35 @@ class InActiveUserTypeContainer extends StatelessWidget {
       padding: const EdgeInsets.all(.5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: ColorsManagers.lightGray,
+        color: Colors.white,
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: ColorsManagers.cultured,
-        ),
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+            border: Border.all(
+              color: Colors.black,
+              width: 1,
+            )),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(
               getStartedModel.title,
-              style: TextStyles.font12TaupeGrayw500Inter(context),
-   
+                 style: TextStyles.font12TaupeGrayw500Inter(context),
             ),
-            trailing:  const Icon(
-              Icons.arrow_forward_ios,
-              color: ColorsManagers.taupeGray,
-            ),
+            // trailing:  const Icon(
+            //   Icons.arrow_forward_ios,
+            //   color: ColorsManagers.taupeGray,
+            // ),
             leading: SvgPicture.asset(
               getStartedModel.icon,
-              colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(.25),
-                BlendMode.srcIn,
-              ),
-            
-               ),
+              // colorFilter: ColorFilter.mode(
+              //   Colors.black.withOpacity(.25),
+              //   BlendMode.srcIn,
+              // ),
+            ),
           ),
         ),
       ),

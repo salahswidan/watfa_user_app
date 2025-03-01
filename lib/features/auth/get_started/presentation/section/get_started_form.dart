@@ -23,23 +23,16 @@ class _GetStartedFormState extends State<GetStartedForm> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        InkWell(
-          onTap: () {
-            setState(() {
-              _selectedUserType = 0;
-            });
-          },
-          child: CustomUserTypeContainer(
-            isActive: _selectedUserType == 0,
-            getStartedModel: GetStartedModel(
-              title: 'For Shoppers'.tr(context),
-              icon: 'assets/svgs/buyer_icon.svg',
-            ),
+        CustomUserTypeContainer(
+          isActive: _selectedUserType == 0,
+          getStartedModel: GetStartedModel(
+            title: 'Shopping Now'.tr(context),
+            
+            icon: 'assets/svgs/buyer_icon.svg',
           ),
         ),
         Flexible(child: verticalSpacing(45)),
-
-        Flexible(flex: 2, child: verticalSpacing(100)),
+        Flexible(flex: 2, child: verticalSpacing(800)),
         GetStartedButton(
           onTap: () {
             Future.delayed(Duration.zero, () async {

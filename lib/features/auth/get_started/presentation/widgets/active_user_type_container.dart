@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-
 import '../../../../../core/theme/colors.dart';
 import '../../../../../core/theme/styles.dart';
 import '../../data/model/get_started_model.dart';
@@ -20,9 +19,10 @@ class ActiveUserTypeContainer extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         gradient: const LinearGradient(
-            begin: Alignment.centerRight,
-            end: Alignment.centerLeft,
-            colors: [ColorsManagers.regalia, ColorsManagers.voliet]),
+          begin: Alignment.centerRight,
+          end: Alignment.centerLeft,
+          colors: [ColorsManagers.regalia, ColorsManagers.voliet],
+        ),
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -33,13 +33,23 @@ class ActiveUserTypeContainer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
-            title: GradientText(getStartedModel.title,
-                 style: TextStyles.font12w600Inter(context),
-                gradientDirection: GradientDirection.ttb,
-                colors: const [
-                  ColorsManagers.voliet,
-                  ColorsManagers.regalia,
-                ]),
+            title: Row(
+              children: [
+                SvgPicture.asset(getStartedModel.icon),
+                const SizedBox(width: 100),
+                Expanded(
+                  child: GradientText(
+                    getStartedModel.title,
+                    style: TextStyles.font20w600Inter(context),
+                    gradientDirection: GradientDirection.ttb,
+                    colors: const [
+                      ColorsManagers.voliet,
+                      ColorsManagers.regalia,
+                    ],
+                  ),
+                ),
+              ],
+            ),
             trailing: ShaderMask(
               blendMode: BlendMode.srcIn,
               shaderCallback: (Rect bounds) {
@@ -52,16 +62,9 @@ class ActiveUserTypeContainer extends StatelessWidget {
                   ],
                 ).createShader(bounds);
               },
-              child: const Icon(
-                Icons.arrow_forward_ios,
-              ),
-            ),
-            leading: SvgPicture.asset(
-              getStartedModel.icon,
-              
+              //  child: const Icon(Icons.arrow_forward_ios),
             ),
           ),
-          
         ),
       ),
     );
