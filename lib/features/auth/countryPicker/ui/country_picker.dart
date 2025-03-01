@@ -26,6 +26,8 @@ class CountryPicker extends StatefulWidget {
 
 class _CountryPickerState extends State<CountryPicker> {
   String? countryValue = '';
+  String? firstCountryFlag;
+  String? fifthCountryFlag;
 
   @override
   Widget build(BuildContext context) {
@@ -88,10 +90,23 @@ class _CountryPickerState extends State<CountryPicker> {
                                         ),
                                       ),
                                     )
-                                  : const SizedBox(),
-                              const Icon(
-                                Icons.keyboard_arrow_down_outlined,
-                              ),
+                                  : fifthCountryFlag != null
+                                      ? Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.only(
+                                                  start: 8),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                            child: Image(
+                                              image: NetworkImage(
+                                                  fifthCountryFlag!),
+                                              width: 24,
+                                              height: 24,
+                                            ),
+                                          ),
+                                        )
+                                      : const SizedBox(),
                               Padding(
                                 padding: const EdgeInsetsDirectional.only(
                                     end: 16.0, start: 8.0),
@@ -113,6 +128,12 @@ class _CountryPickerState extends State<CountryPicker> {
           },
           success: (data) {
             List<AllCountryWithFlag> countryList = data.data;
+            if (firstCountryFlag == null && countryList.isNotEmpty) {
+              firstCountryFlag = countryList.first.flag;
+            }
+            if (fifthCountryFlag == null && countryList.length >= 5) {
+              fifthCountryFlag = countryList[4].flag; // default country
+            }
             if (widget.countryflag != null && countryValue == '') {
               try {
                 setState(() {
@@ -179,10 +200,23 @@ class _CountryPickerState extends State<CountryPicker> {
                                         ),
                                       ),
                                     )
-                                  : const SizedBox(),
-                              const Icon(
-                                Icons.keyboard_arrow_down_outlined,
-                              ),
+                                  : fifthCountryFlag != null
+                                      ? Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.only(
+                                                  start: 8),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                            child: Image(
+                                              image: NetworkImage(
+                                                  fifthCountryFlag!),
+                                              width: 24,
+                                              height: 24,
+                                            ),
+                                          ),
+                                        )
+                                      : const SizedBox(),
                               Padding(
                                 padding: const EdgeInsetsDirectional.only(
                                     end: 16.0, start: 8.0),
