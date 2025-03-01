@@ -76,6 +76,9 @@ class _CountryPickerState extends State<CountryPicker> {
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
+                              const Icon(
+                                Icons.keyboard_arrow_down_outlined,
+                              ),
                               countryValue != ''
                                   ? Padding(
                                       padding: const EdgeInsetsDirectional.only(
@@ -186,6 +189,9 @@ class _CountryPickerState extends State<CountryPicker> {
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
+                              const Icon(
+                                Icons.keyboard_arrow_down_outlined,
+                              ),
                               countryValue != ''
                                   ? Padding(
                                       padding: const EdgeInsetsDirectional.only(
