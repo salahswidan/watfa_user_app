@@ -5,7 +5,6 @@ import 'package:watfa/core/helpers/extinsions.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 
-
 class AdBannerContainer extends StatelessWidget {
   const AdBannerContainer({
     super.key,
@@ -14,7 +13,7 @@ class AdBannerContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: SizedBox(
         height: 200.h(context),
         child: Stack(
@@ -45,15 +44,15 @@ class AdBannerContainer extends StatelessWidget {
                           vertical: 5,
                         ),
                         child: Text("Ad".tr(context),
-                            style: TextStyles.font11WhiteW400Manrope(
-                                context)),
+                            style: TextStyles.font11WhiteW400Manrope(context)),
                       ),
                     ),
                   ),
                   Expanded(child: SizedBox()),
-                  Text("Offers to 70 %".tr(context),
-                      style:
-                          TextStyles.font24WhiteW700Manrope(context)),
+                  Expanded(
+                    child: Text("Offers to 70 %".tr(context),
+                        style: TextStyles.font20WhiteW700Manrope(context)),
+                  ),
                   Expanded(child: SizedBox()),
                 ],
               ),

@@ -30,7 +30,8 @@ class VerifyScreen extends StatelessWidget {
                   style: TextStyles.font24Blackw700Roboto(context)),
               verticalSpacing(18),
               Text(
-                "We sent a reset link to mariamfawzy.com enter 4 digit code that mentioned in the email",
+                "We sent a reset link to mariamfawzy.com enter 4 digit code that mentioned in the email"
+                    .tr(context),
                 style: TextStyles.font14DarkSilverw400Roboto(context),
                 textAlign: TextAlign.center,
               ),
@@ -41,7 +42,7 @@ class VerifyScreen extends StatelessWidget {
                     onPressed: () {
                       context.pop();
                     },
-                    child: Text("Change",
+                    child: Text("Change".tr(context),
                         style: TextStyles.font16Purplew500Roboto(context))),
               ),
               verticalSpacing(20),
@@ -53,9 +54,10 @@ class VerifyScreen extends StatelessWidget {
                         ? context.pushNamed(Routes.shippingAddressScreen)
                         : context.pushNamed(Routes.resetPasswordScreen);
                   },
-                  text: "Reset"),
+                  text: "Reset".tr(context)),
               verticalSpacing(20),
-              CustomVerifyButton(onTap: () {}, text: "Resend Code (0:22)"),
+              CustomVerifyButton(
+                  onTap: () {}, text: "Resend Code (0:22)".tr(context)),
             ],
           ),
         ),

@@ -532,6 +532,13 @@ class TextStyles {
       color: Colors.white,
     );
   }
+  static TextStyle font20WhiteW700Manrope(context) {
+    return GoogleFonts.manrope(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeightHelper.bold,
+      color: Colors.white,
+    );
+  }
 
   static TextStyle font11WhiteW400Manrope(context) {
     return GoogleFonts.manrope(
