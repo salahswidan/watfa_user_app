@@ -51,7 +51,7 @@ class AdBannerContainer extends StatelessWidget {
                   Expanded(child: SizedBox()),
                   Expanded(
                     child: Text("Offers to 70 %".tr(context),
-                        style: TextStyles.font20WhiteW700Manrope(context)),
+                        style: TextStyles.font16WhiteW700Manrope(context)),
                   ),
                   Expanded(child: SizedBox()),
                 ],
