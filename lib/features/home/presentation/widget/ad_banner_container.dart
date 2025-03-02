@@ -32,7 +32,7 @@ class AdBannerContainer extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
+                      horizontal: 7,
                     ),
                     child: Container(
                       decoration: BoxDecoration(
@@ -62,7 +62,7 @@ class AdBannerContainer extends StatelessWidget {
                 bottom: -19.h(context),
                 child: Image.asset(
                   'assets/images/home_ad_offer.png',
-                  width: 157.w(context),
+                  width: 137.w(context),
                 )),
           ],
         ),
